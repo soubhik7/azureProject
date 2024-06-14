@@ -1,0 +1,87 @@
+{
+  "Name": "FileUnzipFA",
+  "ScriptFile": "FileUnzipFA.dll",
+  "FunctionDirectory": null,
+  "EntryPoint": "logistics.fa.FileUnzipFA.Run",
+  "Language": "net8",
+  "Properties": {},
+  "Bindings": [
+    {
+      "Name": "zipCode",
+      "Connection": null,
+      "Type": "workflowActionTrigger",
+      "Properties": {},
+      "Direction": "In",
+      "DataType": null,
+      "Cardinality": null,
+      "IsTrigger": true,
+      "IsReturn": false,
+      "Raw": null
+    }
+  ],
+  "InputBindings": [
+    {
+      "Name": "zipCode",
+      "Connection": null,
+      "Type": "workflowActionTrigger",
+      "Properties": {},
+      "Direction": "In",
+      "DataType": null,
+      "Cardinality": null,
+      "IsTrigger": true,
+      "IsReturn": false,
+      "Raw": null
+    }
+  ],
+  "OutputBindings": [],
+  "Trigger": {
+    "Name": "zipCode",
+    "Connection": null,
+    "Type": "workflowActionTrigger",
+    "Properties": {},
+    "Direction": "In",
+    "DataType": null,
+    "Cardinality": null,
+    "IsTrigger": true,
+    "IsReturn": false,
+    "Raw": null
+  },
+  "InputSchema": {
+    "type": "object",
+    "properties": {
+      "zipCode": {
+        "type": "integer"
+      },
+      "temperatureScale": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "zipCode",
+      "temperatureScale"
+    ]
+  },
+  "OutputSchema": {
+    "type": "object",
+    "properties": {
+      "ZipCode": {
+        "type": "integer"
+      },
+      "CurrentWeather": {
+        "type": "string"
+      },
+      "DayLow": {
+        "type": "string"
+      },
+      "DayHigh": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "ZipCode",
+      "CurrentWeather",
+      "DayLow",
+      "DayHigh"
+    ]
+  }
+}
