@@ -3,9 +3,15 @@
   "configurations": [
     {
       "name": "Attach to .NET Functions",
-      "type": "clr",
+      "type": "coreclr",
       "request": "attach",
       "processName": "Microsoft.Azure.Workflows.Functions.CustomCodeNetFxWorker.exe"
+    },
+    {
+      "name": "Attach to logic app",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:azureLogicAppsStandard.pickProcess}"
     }
   ]
 }

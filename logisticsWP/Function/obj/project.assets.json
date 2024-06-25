@@ -588,11 +588,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/soubhik/Developer/VS Code/azureProject/logisticsWP/Function/FileUnzipFA.csproj",
+      "projectUniqueName": "/Users/soubhik/Developer/VS Code/LogicAppProject/logisticsWP/Function/FileUnzipFA.csproj",
       "projectName": "FileUnzipFA",
-      "projectPath": "/Users/soubhik/Developer/VS Code/azureProject/logisticsWP/Function/FileUnzipFA.csproj",
+      "projectPath": "/Users/soubhik/Developer/VS Code/LogicAppProject/logisticsWP/Function/FileUnzipFA.csproj",
       "packagesPath": "/Users/soubhik/.nuget/packages/",
-      "outputPath": "/Users/soubhik/Developer/VS Code/azureProject/logisticsWP/Function/obj/",
+      "outputPath": "/Users/soubhik/Developer/VS Code/LogicAppProject/logisticsWP/Function/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/soubhik/.nuget/NuGet/NuGet.Config"

@@ -8,5 +8,14 @@
       "name": "LogicApp",
       "path": "./LogicApp"
     }
-  ]
+  ],
+  "settings": {
+    "terminal.integrated.env.osx": {
+      "PATH": "/Users/soubhik/.azurelogicapps/dependencies/DotNetSDK:${env:PATH}"
+    },
+    "omnisharp.dotNetCliPaths": [
+      "/Users/soubhik/.azurelogicapps/dependencies/DotNetSDK"
+    ],
+    "azurite.location": "/Users/soubhik/.azurelogicapps/.azurite"
+  }
 }

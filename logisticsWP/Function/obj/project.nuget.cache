@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HyLLY+Lg4FI=",
+  "dgSpecHash": "L3NE5vDplXU=",
   "success": true,
-  "projectFilePath": "/Users/soubhik/Developer/VS Code/azureProject/logisticsWP/Function/FileUnzipFA.csproj",
+  "projectFilePath": "/Users/soubhik/Developer/VS Code/LogicAppProject/logisticsWP/Function/FileUnzipFA.csproj",
   "expectedPackageFiles": [
     "/Users/soubhik/.nuget/packages/microsoft.azure.functions.worker.extensions.abstractions/1.3.0/microsoft.azure.functions.worker.extensions.abstractions.1.3.0.nupkg.sha512",
     "/Users/soubhik/.nuget/packages/microsoft.azure.functions.worker.sdk/1.15.1/microsoft.azure.functions.worker.sdk.1.15.1.nupkg.sha512",

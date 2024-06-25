@@ -7,3 +7,4 @@ __queuestorage__
 global.json
 local.settings.json
 test
+workflow-designtime/
