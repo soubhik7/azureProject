@@ -1,53 +1,65 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <IsPackable>false</IsPackable>
-    <TargetFramework>net8</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
     <OutputType>Library</OutputType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <!-- Please replace 'LogicAppFolder' with the name of your folder that contains your logic app project. -->
+    <PlatformTarget>x64</PlatformTarget>
     <LogicAppFolder>LogicApp</LogicAppFolder>
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    <SelfContained>false</SelfContained>
- </PropertyGroup>
+  </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Abstractions" Version="1.3.0" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.15.1" />
-    <PackageReference Include="Microsoft.Azure.Workflows.Webjobs.Sdk" Version="1.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Core" Version="3.0.33" />
+    <PackageReference Include="Microsoft.Azure.Workflows.WebJobs.Sdk" Version="1.0.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.18.0" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.1.3" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.20.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
-<Target Name="Task" AfterTargets="Compile">
+  <ItemGroup>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+
+    <Compile Include="FileUnzipFA.cs" />
+    <Compile Include="FileUnzipFA_MI.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\$(Configuration)\net472\" />
+  </ItemGroup>
+
+  <Target Name="Task" AfterTargets="Compile">
     <ItemGroup>
-        <DirsToClean2 Include="..\$(LogicAppFolder)\lib\custom" />
-      </ItemGroup>
-      <RemoveDir Directories="@(DirsToClean2)" />
- </Target>
- 
-  <Target Name="CopyExtensionFiles" AfterTargets="ParameterizedFunctionJsonGeneratorNetCore">
+      <DirsToClean2 Include="..\$(LogicAppFolder)\lib\custom" />
+    </ItemGroup>
+    <RemoveDir Directories="@(DirsToClean2)" />
+  </Target>
+
+  <Target Name="CopyExtensionFiles" AfterTargets="ParameterizedFunctionJsonGenerator">
     <ItemGroup>
-        <CopyFiles Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\net8\**\*.*" CopyToOutputDirectory="PreserveNewest" Exclude="$(MSBuildProjectDirectory)\bin\$(Configuration)\net8\*.*" />
-      <CopyFiles2 Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\net8\*.*" />
+      <CopyFiles Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\net472\**\*.*" CopyToOutputDirectory="PreserveNewest" Exclude="$(MSBuildProjectDirectory)\bin\$(Configuration)\net472\*.*" />
+      <CopyFiles2 Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\net472\*.*" />
     </ItemGroup>
     <Copy SourceFiles="@(CopyFiles)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\%(RecursiveDir)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(CopyFiles2)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\net8\" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(CopyFiles2)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\net472\" SkipUnchangedFiles="true" />
     <ItemGroup>
-        <MoveFiles Include="..\$(LogicAppFolder)\lib\custom\bin\*.*" />
+      <MoveFiles Include="..\$(LogicAppFolder)\lib\custom\bin\*.*" />
     </ItemGroup>
-
-   <Move SourceFiles="@(MoveFiles)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\net8" />
+    <Move SourceFiles="@(MoveFiles)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\net472" />
     <ItemGroup>
-       <DirsToClean Include="..\$(LogicAppFolder)\lib\custom\bin" />
-     </ItemGroup>
-       <RemoveDir Directories="@(DirsToClean)" />
+      <DirsToClean Include="..\$(LogicAppFolder)\lib\custom\bin" />
+    </ItemGroup>
+    <RemoveDir Directories="@(DirsToClean)" />
   </Target>
- 
+
   <ItemGroup>
-      <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\$(Configuration)\net8\" />
-  </ItemGroup>
+
 </Project>

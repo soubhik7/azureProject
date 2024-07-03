@@ -14,9 +14,9 @@ using Microsoft.Azure.Functions.Extensions.Workflows;
 
 namespace logistics.fa
 {
-    public class FileUnzipFA
+    public class FileUnzipFA_MI
     {
-        [FunctionName("FileUnzipFA")]
+        [FunctionName("FileUnzipFA_MI")]
         public async Task<TaskStatus> Run(
             [WorkflowActionTrigger] string SourceConnectionString,
             string DestinationConnectionString,
