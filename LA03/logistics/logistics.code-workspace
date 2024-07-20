@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "Functions",
+      "path": "./Function"
+    },
+    {
+      "name": "LogicApp",
+      "path": "./LogicApp"
+    }
+  ],
+  "settings": {
+    "terminal.integrated.env.osx": {
+      "PATH": "/Users/soubhik/.azurelogicapps/dependencies/DotNetSDK:${env:PATH}"
+    },
+    "omnisharp.dotNetCliPaths": [
+      "/Users/soubhik/.azurelogicapps/dependencies/DotNetSDK"
+    ]
+  }
+}

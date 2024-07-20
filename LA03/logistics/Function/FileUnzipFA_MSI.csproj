@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <TargetFramework>net6.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <OutputType>Library</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LogicAppFolder>LogicApp</LogicAppFolder>
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.17.2" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Abstractions" Version="1.3.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.17.2" />
+    <PackageReference Include="Microsoft.Azure.Workflows.Webjobs.Sdk" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.18.0" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.2.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.20.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Azure.Identity" Version="1.12.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.39" />
+  </ItemGroup>
+
+  <Target Name="Task" AfterTargets="Compile">
+    <ItemGroup>
+      <DirsToClean2 Include="..\$(LogicAppFolder)\lib\custom" />
+    </ItemGroup>
+    <RemoveDir Directories="@(DirsToClean2)" />
+  </Target>
+
+  <Target Name="CopyExtensionFiles" AfterTargets="ParameterizedFunctionJsonGeneratorNetCore">
+    <ItemGroup>
+      <CopyFiles Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\net6.0\**\*.*" CopyToOutputDirectory="PreserveNewest" Exclude="$(MSBuildProjectDirectory)\bin\$(Configuration)\net6.0\*.*" />
+      <CopyFiles2 Include="$(MSBuildProjectDirectory)\bin\$(Configuration)\net6.0\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(CopyFiles)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(CopyFiles2)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\net6.0\" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <MoveFiles Include="..\$(LogicAppFolder)\lib\custom\bin\*.*" />
+    </ItemGroup>
+    <Move SourceFiles="@(MoveFiles)" DestinationFolder="..\$(LogicAppFolder)\lib\custom\net6.0" />
+    <ItemGroup>
+      <DirsToClean Include="..\$(LogicAppFolder)\lib\custom\bin" />
+    </ItemGroup>
+    <RemoveDir Directories="@(DirsToClean)" />
+  </Target>
+
+  <ItemGroup>
+    <Folder Include="bin\$(Configuration)\net6.0\" />
+  </ItemGroup>
+</Project>
