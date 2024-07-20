@@ -1,0 +1,13 @@
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/bin/Debug/net8/FileUnzipFA.deps.json
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/bin/Debug/net8/FileUnzipFA.dll
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/bin/Debug/net8/FileUnzipFA.pdb
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.csproj.AssemblyReference.cache
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.GeneratedMSBuildEditorConfig.editorconfig
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.AssemblyInfoInputs.cache
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.AssemblyInfo.cs
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.csproj.CoreCompileInputs.cache
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.sourcelink.json
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.dll
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/refint/FileUnzipFA.dll
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/FileUnzipFA.pdb
+/Users/soubhik/Developer/VS Code/LogicAppProject/LA04/LogicAppWorkspace/Function/obj/Debug/net8/ref/FileUnzipFA.dll

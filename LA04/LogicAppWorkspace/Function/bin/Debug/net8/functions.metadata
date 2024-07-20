@@ -1,0 +1,19 @@
+[
+  {
+    "name": "FileUnzipFA",
+    "scriptFile": "FileUnzipFA.dll",
+    "entryPoint": "logicapp.fa.FileUnzipFA.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "zipCode",
+        "direction": "In",
+        "type": "workflowActionTrigger",
+        "properties": {}
+      }
+    ]
+  }
+]
