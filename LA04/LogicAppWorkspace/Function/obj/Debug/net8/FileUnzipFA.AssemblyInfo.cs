@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileUnzipFA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8c7529c8b6d690dcdff8c351ab998b44ae49031")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5362740c30e1538c175018a2fa45fd35ef197d72")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileUnzipFA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileUnzipFA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
